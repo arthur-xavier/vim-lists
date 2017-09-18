@@ -1,0 +1,42 @@
+*vim-lists*  Interchangeable management of QuickFix and Location lists
+
+Author: Arthur Xavier
+License: vim-license, see |license|
+
+This plugin defines a set of commands for working with the QuickFix and
+Location lists.  The commands prefer the QuickFix list if it's open, falling
+back to the Location list if the other one does not exists or isn't visible.
+
+This plugin is only available if 'compatible' is not set.
+
+                                                *:Lopen* *:Lo*
+:Lo[pen]        Open the quickfix list if a quickfix buffer exists. If not,
+                attempt to open the location list.
+
+                                                *:Lclose* *:Lc*
+:Lc[lose]       Close the quickfix list if it's open, or else, attemp to close
+                the location list.
+
+                                                *:Lwindow* *:Lw*
+:Lw[indow]      Open the quickfix list when there exists a quickfix buffer, or
+                else attempt open the location list window. If the location list
+                window is already open, close it; but if the quickfix window is
+                open, close it instead.
+
+                                                *:Llist* *:Ll*
+:Ll[ist]        If the quickfix window is open, display the currently focused
+                item in the quickfix list and jump to the specified buffer and
+                line. If the quickfix window is closed, attempt to do the same
+                for the location list.
+
+                                                *:Lnext* *:Ln*
+:Ln[ext]        Display the next error in the quickfix list that includes a
+                file name, if the quickfix window is open. If it's not, then
+                display the next error in the location list that includes a
+                file name.
+
+                                                *:Lprev* *:Lp*
+:Lp[rev]        Display the previous error in the quickfix list that includes a
+                file name, if the quickfix window is open. If it's not, then
+                display the previous error in the location list that includes a
+                file name.
